@@ -1,0 +1,399 @@
+/** @format */
+@import "reset.css";
+@import "_mixin.scss";
+
+* {
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+a {
+  text-decoration: transparent;
+}
+body {
+  width: 100vw;
+  min-width: 480px;
+  height: 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  @include responsives(column, 16px, 10px, 20px, 70px);
+}
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  @include responsives(column, 19px, 20px, 30px, 30px);
+}
+@media screen and (min-width: 1000px) {
+  @include responsives(row, 23px, 25px, 40px, 0px);
+}
+
+header {
+  display: flex;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid black;
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  z-index: 1;
+  padding-right: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding-left: 15px;
+  .title span {
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      color: rgba(50, 50, 93, 0.25);
+    }
+    &:active {
+      color: black;
+    }
+    &:visited {
+      color: black;
+    }
+  }
+}
+
+.hobbies {
+  padding-top: 30px;
+}
+
+.menu {
+  span {
+    color: rgba(50, 50, 93, 0.25);
+
+    padding-top: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      color: black;
+    }
+  }
+}
+.profile {
+  z-index: 0;
+  padding-top: 7%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  .profile_photo {
+    min-width: 300px;
+    width: 25%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+  }
+  .profile_text {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-top: 20px;
+    div:nth-child(1) {
+      margin-right: 20px;
+      font-weight: 100;
+    }
+    div:nth-child(2) {
+      font-weight: 500;
+    }
+    div {
+      line-height: 200%;
+    }
+  }
+}
+.mode {
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+  cursor: pointer;
+  border: transparent;
+  background-color: rgb(94, 94, 94);
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  width: 70px;
+  height: 30px;
+  transition: all 0.1s ease-in;
+  &:hover {
+    background-color: black;
+  }
+  &:active {
+    transform: scale(95%);
+  }
+}
+
+.main,
+.mainforhobbies {
+  width: 100%;
+  font-size: 15px;
+  line-height: 180%;
+  margin-top: -6%;
+  .frame {
+    height: 200px;
+    width: 600px;
+  }
+  .grid {
+    display: grid;
+    margin-right: 50px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    gap: 2px;
+
+    .imghobbies {
+      width: 100%;
+      transition: 0.1s ease-in-out;
+      border-radius: 10px;
+      &:hover {
+        transform: scale(105%);
+      }
+    }
+  }
+}
+
+.active_mode {
+  background-color: black;
+  transition: 0.2s;
+  header {
+    display: flex;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solisd rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    padding-top: 30px;
+    padding-bottom: 10px;
+    z-index: 1;
+    padding-right: 10px;
+    transition: 0.3s;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding-left: 15px;
+    .title span {
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        color: rgb(148, 148, 255);
+      }
+      &:active {
+        color: rgb(255, 255, 255);
+      }
+      &:visited {
+        color: rgb(255, 255, 255);
+      }
+    }
+  }
+
+  .menu {
+    span {
+      color: rgb(90, 90, 90);
+
+      padding-top: 3px;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        color: rgb(255, 255, 255);
+      }
+    }
+  }
+  .profile {
+    z-index: 0;
+    padding-top: 7%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    .profile_photo {
+      min-width: 300px;
+      width: 25%;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    .profile_text {
+      display: flex;
+      flex-direction: row;
+      text-align: left;
+      margin-top: 20px;
+      color: whitesmoke;
+      transition: 0.2s;
+      div:nth-child(1) {
+        margin-right: 20px;
+        font-weight: 100;
+      }
+      div:nth-child(2) {
+        font-weight: 500;
+      }
+      div {
+        line-height: 200%;
+      }
+    }
+  }
+  .mode {
+    position: fixed;
+    right: 50px;
+    bottom: 30px;
+    cursor: pointer;
+    border: transparent;
+    background-color: rgb(94, 94, 94);
+    color: rgba(255, 255, 255, 0.668);
+    text-transform: uppercase;
+    width: 70px;
+    height: 30px;
+    transition: all 0.1s ease-in;
+    &:hover {
+      background-color: rgb(255, 255, 255);
+      color: black;
+    }
+    &:active {
+      transform: scale(95%);
+    }
+  }
+
+  .main,
+  .mainforhobbies {
+    width: 100%;
+    font-size: 15px;
+    line-height: 180%;
+    color: whitesmoke;
+    transition: 0.2s;
+    margin-top: -6%;
+    .frame {
+      height: 200px;
+      width: 600px;
+    }
+    .grid {
+      display: grid;
+      margin-right: 50px;
+      margin-top: 15px;
+      margin-bottom: 40px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 220px);
+      gap: 2px;
+      .imghobbies {
+        width: 100%;
+        transition: 0.1s ease-in-out;
+        border-radius: 10px;
+        &:hover {
+          transform: scale(105%);
+        }
+      }
+    }
+  }
+}
+
+//carousel design
+/* Slideshow container */
+.slideshow-container {
+  margin-top: 7%;
+  max-width: 800px;
+  height: 400px;
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: flex;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #000000;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px 20px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  text-align: right;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.carousel-container {
+  display: flex;
+  max-width: 726px;
+  flex-direction: column;
+  margin-left: 9%;
+}
+
+.dots {
+  margin-top: -35px;
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 3px;
+  width: 32px;
+  margin: 0 1px;
+  background-color: rgba(187, 187, 187, 0.413);
+  border-radius: 3px;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #000000;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.72s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

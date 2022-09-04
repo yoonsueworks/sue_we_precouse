@@ -1,0 +1,25 @@
+/** @format */
+
+@mixin responsives(
+  $direction,
+  $fontsize,
+  $paddingleft,
+  $paddingright,
+  $photomargin
+) {
+  header {
+    font-size: $fontsize;
+  }
+  .menu {
+    display: flex;
+    flex-direction: $direction;
+    span {
+      font-size: $fontsize;
+      padding-left: $paddingleft;
+      padding-right: $paddingright;
+    }
+  }
+  .profile_photo {
+    padding-top: $photomargin;
+  }
+}
